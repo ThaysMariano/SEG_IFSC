@@ -25,11 +25,11 @@ class CalculatorTest {
 
     @Test
     void multiply() {
-
+        double tolerancia = 0.0000000000001;
         assertAll( "multy",
-                () -> assertEquals(16, Calculator.multiply(4, 4)),
+                () -> assertEquals(16, Calculator.multiply(4, 4), tolerancia),
 //              () -> assertEquals(0, Calculator.add()),
-                () -> assertEquals(4, Calculator.multiply(2, 2))
+                () -> assertEquals(4, Calculator.multiply(2, 2), tolerancia)
 
         );
 
