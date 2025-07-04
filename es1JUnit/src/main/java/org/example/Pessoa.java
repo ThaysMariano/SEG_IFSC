@@ -5,8 +5,8 @@ public class Pessoa {
     private String cpf;
 
     public Pessoa(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
+        setNome(nome);
+        setCpf(cpf);
     }
 
     public String getCpf() {
@@ -16,7 +16,7 @@ public class Pessoa {
     public void setCpf(String cpf) {
 
         if(cpf.isEmpty() || cpf.equals(" ") || !isValidCPF(cpf)){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("cpf invalido");
         }
 
         this.cpf = cpf;
@@ -30,7 +30,7 @@ public class Pessoa {
         String[] n = nome.split(" ");
 
         if(nome.isEmpty() || nome.equals(" ") || n.length<2){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("nome invalido");
         }
 
         this.nome = nome;
