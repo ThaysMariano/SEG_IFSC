@@ -12,6 +12,9 @@ public class Calculator {
     }
 
     static double multiply(double... operands){
+        if(operands == null || operands.length <=1){
+            throw new IllegalArgumentException();
+        }
         return DoubleStream.of(operands).reduce(1, (a, b) -> a*b); //1 valor ao final, funcao de multiplicacao
     }
 
