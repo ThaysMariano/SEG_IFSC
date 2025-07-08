@@ -32,6 +32,11 @@ class ExplorerRobotTest {
         assertEquals(2, robo.getX(), TOLERANCE);
         robo.setX(10);
         assertEquals(10, robo.getX(), TOLERANCE);
+
+
+        robo.move(10);
+        assertEquals(20, robo.getX(), TOLERANCE);
+
     }
 
     @Test
@@ -39,14 +44,30 @@ class ExplorerRobotTest {
         assertEquals(5, robo.getY(), TOLERANCE);
         robo.setY(10.4);
         assertEquals(10.4, robo.getY(), TOLERANCE);
+
+        robo.setDirection(90);
+        robo.move(12.3);
+        assertEquals(22.7, robo.getY(), TOLERANCE);
+
     }
 
     @Test
     void setDirection() {
+
+        assertEquals(0, robo.getDirection(), TOLERANCE);
+        robo.setDirection(45);
+        assertEquals(45, robo.getDirection(), TOLERANCE);
+
+
     }
 
     @Test
     void setBattery() {
+
+        assertEquals(14, robo.getBattery(), TOLERANCE);
+        
+
+
     }
 
     @Test
